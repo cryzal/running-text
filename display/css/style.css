@@ -559,7 +559,7 @@ Image credits: unsplash.com
 }
 #running-text{
 	height:3.5vw;
-	width:56vw;
+	width:96%;
 	color:#fff;
 	/* margin:3vh 3vw 4vh 3vw; */
 	background-color:rgba(51,204,204,0.2);
@@ -610,7 +610,7 @@ Image credits: unsplash.com
 
 
 #logo{
-	height:7vw;
+	height:10vw;
 	width:70vw;
 	/* margin:3vh 3vw 4vh 3vw; */
 	/* background-color: #f00; */
