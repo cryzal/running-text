@@ -9,6 +9,10 @@ $json 	= file_get_contents($file);
 $db		= json_decode($json, true);
 $showDb	= $db;
 unset($showDb['akses']);
+$namaMasjid          = $db['setting']["nama"];
+$lokasiMasjid        = $db['setting']["lokasi"];
+$alamatMasjid        = $db['setting']["alamat"];
+
 
 $info_timer			= $db['timer']['info'] 		* 1000;	//detik
 $wallpaper_timer	= $db['timer']['wallpaper'] * 1000;
@@ -88,8 +92,8 @@ foreach ($files as $v) {
                 <div id="logo" style="background-image: url(logo/<?= $logo ?>);"></div>
             </div>
             <div class="col-md-10">
-                <p class="mb-1 fw-bold" id="nama-masjid"><span id="masjid-head">Masjid Al-Surya</span> RS Delta Surya</p>
-                <p class="mb-0" id="alamat">Jl. Pahlawan No.9, Jati, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61211</p>
+                <p class="mb-1 fw-bold" id="nama-masjid"><span id="masjid-head"><?=$namaMasjid ?></span> <?= $lokasiMasjid ?></p>
+                <p class="mb-0" id="alamat"><?= $alamatMasjid ?></p>
             </div>
         </div>
         <div class="col-md-6 header-right">
@@ -203,7 +207,6 @@ foreach ($files as $v) {
 <script src="js/moment-with-locales.js"></script>
 <script src="js/PrayTimes.js"></script>
 <script src="js/jquery.marquee.js"></script>
-
 
 <script>
     <?php //Biar nggak ke load di HTML
@@ -367,6 +370,7 @@ foreach ($files as $v) {
         showJadwal: function() {
             let jamSekarang = moment();
             let jamDelay = moment().subtract(5, 'minutes');
+            
             let jadwal = '';
             let hari = app.db.dayName[jamSekarang.format("dddd")]; //pastikan moment js pake standart inggris (default) ==> jangan pindah locale
             let bulan = app.db.monthName[jamSekarang.format("MMMM")];
