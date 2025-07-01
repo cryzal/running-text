@@ -1,9 +1,10 @@
 :root{
-    --primary-color : #003049;
-    --secondary-color : #D62828;
+    --primary-color : #306B34;
+	--primary-color-rgb: 48, 107, 52;
+    --secondary-color : #1C5253;
     --third-color : #F77F00;
-    --forth-color : #FCBF49;
-    --fifth-color:#EAE2B7;
+    --forth-color : #C3EB78;
+    --fifth-color:#FFFFC7 ;
 }
 
 body {
@@ -42,7 +43,7 @@ body {
 
 #masjid-head {
     font-weight: 900;
-    color: var(--secondary-color);
+    color: var(--third-color);
 }
 
 #alamat{
@@ -52,6 +53,7 @@ body {
 #tgl {
     font-size: 40px;
     font-weight: 900;
+	color:var(--fifth-color);
 }
 
 /********************************/
@@ -201,7 +203,7 @@ body {
 	width:96%;
 	color:#fff;
 	/* margin:3vh 3vw 4vh 3vw; */
-	background-color:rgba(0,48,73,0.5);
+	background-color:rgba(var(--primary-color-rgb),0.5);
 	position:fixed;
 	bottom:2vh;
 	/* bottom:4vh; */
@@ -247,7 +249,7 @@ body {
 	padding:0 4vw 0 0;
 	/* font-family: 'OpenSansCondLight', Impact,'Times New Roman', Helvetica, Arial, sans-serif;  */
 	font-weight:bold;
-	color:#FFF;
+	color:var(--fifth-color);
 	position:relative;
     display: flex;
 }
@@ -296,7 +298,7 @@ body {
 	right:0vw;
 	top:0.5vw; */
 	font-size:3vw;
-	color:var(--third-color);
+	color:var(--fifth-color);
 	/* padding: 0 5px;
 	border-radius:1px; */
 }
